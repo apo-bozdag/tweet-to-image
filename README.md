@@ -16,7 +16,7 @@ Twimage is a simple web app made with **NextJS, Twitter API and Chakra UI** that
 ## Screenshots
 
 ### The Home Page
-<img src="./screenshots-2023-02-15-02.50.01.jpg" />
+<img src="./screenshots/screenshots-2023-02-15-02.50.01.jpg" />
 
 ## Author
 [Abdullah Bozdag](https://twitter.com/apo_bozdag)
