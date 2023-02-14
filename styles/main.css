@@ -1,152 +1,146 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 @font-face {
-	font-family: Lib;
-	src: url('/LiberationSans-Regular.ttf');
+    font-family: Lib;
+    src: url('/LiberationSans-Regular.ttf');
 }
 
 @font-face {
-	font-family: Lib-Bold;
-	src: url('/LiberationSans-Bold.ttf');
+    font-family: Lib-Bold;
+    src: url('/LiberationSans-Bold.ttf');
 }
 
 body {
-	font-family: 'Inter', sans-serif;
-	font-size: 62.5%;
-	color: #14171a;
+    font-family: 'Inter', sans-serif;
+    font-size: 62.5%;
+    color: #14171a;
 }
 
 .bold {
-	font-family: 'Lib-Bold';
+    font-family: 'Lib-Bold';
 }
 
 .i {
-	font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-a{
-	color: #e41a9d !important;
+a {
+    color: #e41a9d !important;
 }
 
 a:hover {
-	color: #e41a9dcc !important;
-	text-decoration: underline;
+    color: #e41a9dcc !important;
+    text-decoration: underline;
 }
 
 
 footer {
-	text-align: center;
-	margin-top: 6rem;
-	padding-bottom: 3rem;
+    text-align: center;
+    margin-top: 6rem;
+    padding-bottom: 3rem;
 }
 
 
 .title {
-	font-size: 4rem;
-	background: linear-gradient(to right, #1DA1F2, #e41a9d);
-	font-weight: 600;
-	background-clip: text;
-	color: transparent;
-	text-align: center;
+    font-size: 4rem;
+    background: linear-gradient(to right, #1DA1F2, #e41a9d);
+    font-weight: 600;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
 }
-
 
 
 .container {
-	white-space: pre-line;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: all .1s ease-in;
-	position: relative;
-
-	/*background: rgba( 255, 255, 255, 0.50 );
-	border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.2) 2px 8px 8px;
-    border: 1px rgba(255,255,255,0.4) solid;
-    border-bottom: 1px rgba(40,40,40,0.30) solid;
-    border-right: 1px rgba(40,40,40,0.30) solid;*/
+    white-space: pre-line;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: all .1s ease-in;
+    position: relative;
 }
 
 .container:before {
-	content:'';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	background: rgba( 255, 255, 255, 0.4 );
-	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.4 );
-	/*backdrop-filter: blur( 4px );*/
-	/*-webkit-backdrop-filter: blur( 4px );*/
-	border-radius: 8px;
-	border: 1px solid rgba( 255, 255, 255, 0.18 );
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.4);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.con {
+    transition: all 2s !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .non-tweet {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1.3rem;
-	text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 
 .user {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 
 .names {
-	margin-left: 4px;
-	flex: 1;
+    margin-left: 4px;
+    flex: 1;
 }
 
 
 .name {
-	display: flex;
+    display: flex;
 }
 
 .n {
-	margin-right: 2px;
+    margin-right: 2px;
 }
 
 .username {
-	color: #888;
-	margin-top: 2px;
+    color: #888;
+    margin-top: 2px;
 }
 
 .user-img {
-	width: 3rem; height: 3rem;
-	border-radius: 1000px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1000px;
 }
 
 
-.time_source {	
-	display: flex;
-	align-items: center;
-	margin-top: 0.7rem;
+.time_source {
+    display: flex;
+    align-items: center;
+    margin-top: 0.7rem;
 }
 
 
 .metrics {
-	display: flex;
-	margin-top: 0.9rem;
+    display: flex;
+    margin-top: 0.9rem;
 }
 
 .likes {
-	margin-right: 1rem;
+    margin-right: 1rem;
 }
 
 .sec {
-	color: #536371;
+    color: #536371;
 }
 
 p {
-	min-width: 100%;
-	z-index: 10;
+    min-width: 100%;
+    z-index: 10;
 }
-
-
-
