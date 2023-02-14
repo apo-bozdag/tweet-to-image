@@ -1,12 +1,12 @@
 # 🐦 Twimage - Convert tweets to beautiful images.
 
 
-![Next](https://img.shields.io/badge/NextJS-10.1.3-000000)
+![Next](https://img.shields.io/badge/NextJS-13.1.6-000000)
 ![dom-to-image](https://img.shields.io/badge/dom_to_image-^2.6.0-1e0b99)
 ![Chakra UI](https://img.shields.io/badge/Chakra_UI-^1.4.2-319795)
 ![Chakra UI](https://img.shields.io/badge/Twitter-API-1DA1F2)
 
-[Check out the website](http://twimage.vercel.app). If you like it, or find it useful in any way, drop a 🌟 at the repo. Why? Because it keeps a beginner moving forward 😄.
+[Check out the website](https://tweet-to-image-smoky.vercel.app). If you like it, or find it useful in any way, drop a 🌟 at the repo. Why? Because it keeps a beginner moving forward 😄.
 
 
 ## What it does?
