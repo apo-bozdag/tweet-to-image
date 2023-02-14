@@ -81,6 +81,8 @@ const Main = ({
                         tweetData && <Tweet
                             tweet={tweetData}
                             showTime={showTime}
+                            showImage={true}
+                            quoteTweet={false}
                             showMetrics={showMetrics}
                             showSource={showSource}
                             showTwitterIcon={showTwitterIcon}

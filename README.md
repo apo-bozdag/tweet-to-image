@@ -6,7 +6,6 @@
 ![Chakra UI](https://img.shields.io/badge/Chakra_UI-^1.4.2-319795)
 ![Chakra UI](https://img.shields.io/badge/Twitter-API-1DA1F2)
 
-
 [Check out the website](http://twimage.vercel.app). If you like it, or find it useful in any way, drop a 🌟 at the repo. Why? Because it keeps a beginner moving forward 😄.
 
 
@@ -17,11 +16,7 @@ Twimage is a simple web app made with **NextJS, Twitter API and Chakra UI** that
 ## Screenshots
 
 ### The Home Page
-<img src="https://github.com/drkPrince/tweet-to-image/blob/main/screenshots/home.png" />
-
-### Customising tweet
-<img src="https://github.com/drkPrince/tweet-to-image/blob/main/screenshots/settings.png" />
-
+<img src="./screenshots-2023-02-15-02.50.01.jpg" />
 
 ## Author
 [Abdullah Bozdag](https://twitter.com/apo_bozdag)

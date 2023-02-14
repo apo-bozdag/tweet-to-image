@@ -144,15 +144,6 @@ function App() {
 
             <footer>
                 <Text px="1rem" className="i" color="gray.500" fontSize="lg">
-                    Made with 💜 for open source by{" "}
-                    <a
-                        href="https://www.twitter.com/drkPrns"
-                        rel="noreferrer"
-                        target="_blank"
-                    >
-                        Prince
-                    </a>
-                    . Check out on{" "}
                     <a
                         href="https://github.com/apo-bozdag/tweet-to-image.git"
                         rel="noreferrer"
@@ -160,7 +151,6 @@ function App() {
                     >
                         Github
                     </a>
-                    .
                 </Text>
             </footer>
         </Box>
