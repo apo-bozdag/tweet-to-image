@@ -64,7 +64,7 @@ export default async function handler(req, res) {
         // }
         if (response.data.data?.entities?.urls) {
             const find_url = response.data.data.entities.urls.filter(function (url) {
-                return url.expanded_url.includes('twitter.com')
+                return url.expanded_url.includes('twitter.com') && !url.display_url.includes('pic.twitter.com')
             })
             if (find_url.length > 0){
                 const quotedUrl = find_url[0].expanded_url
