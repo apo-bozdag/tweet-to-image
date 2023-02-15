@@ -12,6 +12,9 @@
 ## What it does?
 Twimage is a simple web app made with **NextJS, Twitter API and Chakra UI** that converts your favourite tweets to an image. You can choose between formats PNG, JPEG and SVG.
 
+<div align="center">
+<sub>Buy me a beer - <a href="https://www.buymeacoffee.com/apobozdag">Sponsorship 🍻</a></sub><br>
+</div>
 
 ## Screenshots
 
