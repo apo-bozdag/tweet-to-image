@@ -8,6 +8,7 @@ const Tweet = ({tweet, showTime, showMetrics, showSource, showImage, showTwitter
 
     const urls = tweet.data?.entities?.urls
     const mentions = tweet.data?.entities?.mentions
+    const hashtags = tweet.data?.entities?.hashtags
 
     const linkregex = /(https?:\/\/[^\s]+)/g;
 
@@ -44,6 +45,11 @@ const Tweet = ({tweet, showTime, showMetrics, showSource, showImage, showTwitter
     mentions?.forEach((mention, i) => {
         const corres_mention = mentions[i]
         text = text.replace(`@${corres_mention.username}`, `<a href="https://twitter.com/${corres_mention.username}" rel="noreferrer" target="_blank">@${corres_mention.username}</a>`)
+    })
+
+    hashtags?.forEach((hashtag, i) => {
+        const corres_hashtag = hashtags[i]
+        text = text.replace(`#${corres_hashtag.tag}`, `<a href="https://twitter.com/hashtag/${corres_hashtag.tag}" rel="noreferrer" target="_blank">#${corres_hashtag.tag}</a>`)
     })
 
     text = text.replace('&amp;', '&')
