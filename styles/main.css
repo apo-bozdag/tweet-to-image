@@ -139,6 +139,21 @@ footer {
     margin-top: 0.9rem;
 }
 
+.video-icon {
+    color: #fff6;
+    margin: auto;
+}
+
+.video-svg {
+    overflow: visible;
+    box-sizing: content-box;
+    font-size: 4em;
+    display: var(--fa-display, inline-block);
+    height: 2em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
+
 .likes {
     margin-right: 1rem;
 }

@@ -16,6 +16,7 @@ const Tweet = ({tweet, showTime, showMetrics, showSource, showImage, showTwitter
     const username = tweet.includes.users[0].username
     const isVerified = tweet.includes.users[0].verified
     const image = tweet.includes?.media ? tweet.includes.media[0].url : null
+    const video = tweet.includes?.media ? tweet.includes.media[0].preview_image_url : null
     const source = '@gundem_yazilim'
     const likes = tweet.data.public_metrics.like_count
     const impression_count = tweet.data.public_metrics.impression_count
@@ -121,6 +122,19 @@ const Tweet = ({tweet, showTime, showMetrics, showSource, showImage, showTwitter
             {(showImage && image) && (
                 <div style={{backgroundImage: `url('${image}')`, height: '350px', width: '100%'}}
                      className='tweet-img'/>
+            )}
+            {(showImage && video) && (
+                <div style={{backgroundImage: `url('${video}')`, height: '350px', width: '100%'}}
+                        className='tweet-img'>
+                    <Box className='video-icon'>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-play"
+                             className="video-svg" role="img"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                  d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"></path>
+                        </svg>
+                    </Box>
+                </div>
             )}
             <div className='time_source sec'>
                 <Text fontSize={font_size_small}>
