@@ -79,6 +79,8 @@ function App() {
                 setLoading(false);
                 setTweetData(data.data);
                 setError(false);
+                // change url params tweet=url
+                window.history.pushState({}, '', `?tweet=${url}`);
             }
         } catch (e) {
             setError(true);
