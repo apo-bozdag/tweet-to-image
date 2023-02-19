@@ -27,17 +27,16 @@ const Tweet = ({tweet, showTime, showMetrics, showSource, showImage, showTwitter
     let text = tweet.data.text
     const link_occurs = text.match(linkregex)
 
-
     link_occurs?.forEach((link, i) => {
         if (!tweet.includes.media) {
             const corres_url = urls[i]
-            text = text.replace(text.slice(corres_url.start, corres_url.end), '')
+            text = text.replace(` ${link}`, ` <a href="${corres_url.expanded_url}" rel="noreferrer" target="_blank">${corres_url.expanded_url}</a>`)
         } else {
             if (i === link_occurs.length - 1) {
-                return
+                text = text.replace(` ${link}`, '')
             } else {
                 const corres_url = urls[i]
-                text = text.replace(text.slice(corres_url.start, corres_url.end), '')
+                text = text.replace(` ${link}`, ` <a href="${corres_url.expanded_url}" rel="noreferrer" target="_blank">${corres_url.expanded_url}</a>`)
             }
         }
     })
