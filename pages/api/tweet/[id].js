@@ -12,7 +12,7 @@ export default async function handler(req, res) {
         const response = fetch.data
         if (response.data.data?.entities?.urls) {
             const find_url = response.data.data.entities.urls.filter(function (url) {
-                return url.expanded_url.includes('twitter.com') && !url.display_url.includes('pic.twitter.com')
+                return url.expanded_url.includes('twitter.com') && !url.display_url.includes('pic.twitter.com') && !url.expanded_url.includes(id)
             })
             if (find_url.length > 0){
                 const quotedUrl = find_url[0].expanded_url
