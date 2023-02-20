@@ -158,7 +158,7 @@ function App() {
 
             <Header bringTweet={bringTweet}/>
 
-            <Flex my="16" direction={flex} p="4">
+            <Flex my="16" direction={flex} p="4" flexWrap='wrap'>
                 <Main
                     tweetRef={tweetRef}
                     bg={bg}
