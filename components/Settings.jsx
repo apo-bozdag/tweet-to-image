@@ -13,10 +13,10 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    Select,
+    Select, IconButton, ButtonGroup, Stack,
 } from "@chakra-ui/react"
 
-import {DownloadIcon} from '@chakra-ui/icons'
+import {CopyIcon, DownloadIcon} from '@chakra-ui/icons'
 
 
 const Settings = ({props}) => {
@@ -99,25 +99,30 @@ const Settings = ({props}) => {
                     <SliderThumb/>
                 </Slider>
             </Box>
-            <Flex gap='2'>
+            <Stack direction='row' spacing={4} align='center'>
                 <Select width='90px' onChange={(e) => props.setRatio(e.target.value)} value={props.ratio}>
                     <option value=''>-</option>
                     <option value='1'>1:1</option>
                     <option value='2'>16:9</option>
                 </Select>
 
-                <Menu my='10'>
-                    <MenuButton borderRadius='3px' p='9px' as={Button} rightIcon={< DownloadIcon/>} colorScheme="blue">
-                        Download
-                    </MenuButton>
-                    <MenuList fontSize='15px'>
-                        <MenuItem onClick={() => props.convert('png')}>PNG</MenuItem>
-                        <MenuItem onClick={() => props.convert('jpeg')}>JPEG</MenuItem>
-                        <MenuItem onClick={() => props.convert('svg')}>SVG</MenuItem>
-                        <MenuItem onClick={() => props.openNewTabImg('jpeg')}>Open on the new tab</MenuItem>
-                    </MenuList>
-                </Menu>
-            </Flex>
+                <ButtonGroup size='sm' isAttached variant='outline'>
+
+                    <Menu my='10'>
+                        <MenuButton borderRadius='3px' p='9px' as={Button} rightIcon={<DownloadIcon/>} colorScheme="blue">
+                            Download
+                        </MenuButton>
+                        <MenuList fontSize='15px'>
+                            <MenuItem onClick={() => props.convert('png')}>PNG</MenuItem>
+                            <MenuItem onClick={() => props.convert('jpeg')}>JPEG</MenuItem>
+                            <MenuItem onClick={() => props.convert('svg')}>SVG</MenuItem>
+                            <MenuItem onClick={() => props.openNewTabImg('jpeg')}>Open on the new tab</MenuItem>
+                        </MenuList>
+                    </Menu>
+                    <IconButton aria-label='copy'
+                                onClick={() => props.copyImg('png')} icon={<CopyIcon />} />
+                </ButtonGroup>
+            </Stack>
         </Box>
     )
 }

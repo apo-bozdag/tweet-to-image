@@ -8,7 +8,7 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Settings from "../components/Settings";
 
-import {Text, Box, Flex} from "@chakra-ui/react";
+import {Text, Box, Flex, toast, useToast} from "@chakra-ui/react";
 
 function App() {
     const gradients = [
@@ -49,6 +49,8 @@ function App() {
     );
 
     const tweetRef = useRef(null);
+
+    const toast = useToast()
 
     const [tweetData, setTweetData] = useState(null);
 
@@ -127,6 +129,36 @@ function App() {
         newTab?.document.close();
     }
 
+    const copyImg = async (format) => {
+        const imgData = await getImgData(format);
+
+        try {
+            const img = new Image();
+            img.src = imgData;
+            img.onload = () => {
+                const canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext("2d");
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0);
+                canvas.toBlob(function(blob) {
+                    const item = new ClipboardItem({ "image/png": blob });
+                    navigator.clipboard.write([item]);
+                    toast({
+                        title: "Image copied to clipboard.",
+                        status: 'success',
+                        duration: 9000,
+                        isClosable: true,
+                    })
+                });
+            }
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     const convert = async (format) => {
         const imgData = await getImgData(format);
         const newTab = window.open();
@@ -165,6 +197,7 @@ function App() {
         setScale,
         convert,
         openNewTabImg,
+        copyImg,
         bg,
         gradients,
         setBg,
