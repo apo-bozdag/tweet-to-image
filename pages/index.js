@@ -89,12 +89,9 @@ function App() {
         }
     };
 
-
-    const convert = async (format) => {
+    const getImgData = async (format) => {
         const node = tweetRef.current;
         const scale = 2;
-        let dataUrl;
-
         const style = {
             transform: "scale(2)",
             transformOrigin: "center left",
@@ -107,22 +104,49 @@ function App() {
             style
         };
 
+        if (format === 'svg') {
+            return await DiskImage.toSvg(node, param);
+        }
+
+        if (format === 'jpeg') {
+            return await DiskImage.toJpeg(node, param);
+        }
+
+        if (format === 'png') {
+            return await DiskImage.toPng(node, param);
+        }
+
+        return await DiskImage.toPng(node, param);
+    }
+
+    const openNewTabImg = async (format) => {
+        const imgData = await getImgData(format);
+        const newTab = window.open();
+        newTab?.document.write(
+            `<!DOCTYPE html><head><title>Tweet preview</title></head><body><img src="${imgData}" ></body></html>`);
+        newTab?.document.close();
+    }
+
+    const convert = async (format) => {
+        const imgData = await getImgData(format);
+        const newTab = window.open();
+        newTab?.document.write(
+            `<!DOCTYPE html><head><title>Document preview</title></head><body><img src="${imgData}" ></body></html>`);
+        newTab?.document.close();
+
         switch (format) {
             case "png": {
-                dataUrl = await DiskImage.toPng(node, param);
-                saveAs(dataUrl, `${new Date().toJSON()}.${format}`);
+                saveAs(imgData, `${new Date().toJSON()}.${format}`);
                 return;
             }
 
             case "jpeg": {
-                dataUrl = await DiskImage.toJpeg(node, param);
-                saveAs(dataUrl, `${new Date().toJSON()}.${format}`);
+                saveAs(imgData, `${new Date().toJSON()}.${format}`);
                 return;
             }
 
             case "svg": {
-                dataUrl = await DiskImage.toSvg(node, param);
-                saveAs(dataUrl, `${new Date().toJSON()}.${format}`);
+                saveAs(imgData, `${new Date().toJSON()}.${format}`);
                 return;
             }
         }
@@ -140,6 +164,7 @@ function App() {
         scale,
         setScale,
         convert,
+        openNewTabImg,
         bg,
         gradients,
         setBg,

@@ -114,6 +114,7 @@ const Settings = ({props}) => {
                         <MenuItem onClick={() => props.convert('png')}>PNG</MenuItem>
                         <MenuItem onClick={() => props.convert('jpeg')}>JPEG</MenuItem>
                         <MenuItem onClick={() => props.convert('svg')}>SVG</MenuItem>
+                        <MenuItem onClick={() => props.openNewTabImg('jpeg')}>Open on the new tab</MenuItem>
                     </MenuList>
                 </Menu>
             </Flex>
