@@ -41,6 +41,7 @@ function App() {
         'linear-gradient(to right bottom, rgb(33, 147, 176), rgb(109, 213, 237))',
         'linear-gradient(to right bottom, rgb(211, 204, 227), rgb(233, 228, 240))',
         'linear-gradient(to right bottom, rgb(17, 153, 142), rgb(56, 239, 125))',
+        'linear-gradient(330deg, rgb(255, 25, 125), rgb(45, 13, 255), rgb(0, 255, 179))',
     ]
     // random gradient select
     const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
